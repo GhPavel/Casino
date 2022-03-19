@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "casino.steps",
                 "casino.hooks"
         },
-        tags = "@Api_6",
+        tags = "@all",
         stepNotifications = true
 )
 public class CucumberRunnerTest {

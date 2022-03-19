@@ -20,8 +20,7 @@ public class Hooks {
 
     @Before
     public void test() {
-//        setDriver(getChromeDriver());
-//        getDriver().get(confReader.getValue("url"));
+
     }
 
     @After
@@ -30,5 +29,10 @@ public class Hooks {
             getDriver().close();
         }
         clearStash();
+    }
+
+    public static void initDriver() {
+        setDriver(getChromeDriver());
+        getDriver().get(confReader.getValue("url.ui"));
     }
 }

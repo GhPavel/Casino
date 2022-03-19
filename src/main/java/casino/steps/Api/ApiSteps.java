@@ -72,7 +72,7 @@ public class ApiSteps {
         checkRegisterDTO(Stash.getValue(responseStashKey), Stash.getValue(playerDataStashKey));
     }
 
-    @Когда("Авторизация зарегистрированным пользователем {string} и сохранить токен в stash с ключом {string}")
+    @Когда("Авторизация зарегистрированным пользователем {string} и сохранение токена в stash с ключом {string}")
     public void loginToSite(String playerDataStashKey, String playerTokenStashKey) {
         String baseAuth = getBaseAuthBase64(confReader.getValue("basic.authentication.username"), "");
         String body = getLoginBody(Stash.getValue(playerDataStashKey));
@@ -97,7 +97,7 @@ public class ApiSteps {
         log.info("Ответ: {}", response.asString());
     }
 
-    @Когда("Проверить профиль игрока {string} с данными при регистрации {string}")
+    @Когда("Сравнить профиль игрока {string} с данными при регистрации {string}")
     public void eqDTO(String playerDataStashKey, String profileStashKey) {
         Assertions.assertTrue(((RegDataPlayerDTO) Stash.getValue(playerDataStashKey)).equalsDTO(Stash.getValue(profileStashKey)), "Поученные данные не совпадают с данными при регистрации!");
     }
